@@ -6,4 +6,9 @@ export default defineSchema({
     sender: v.string(),
     content: v.string(),
   }),
+  users: defineTable({
+    username: v.string(),
+    image: v.string(),
+    clerkId: v.string(),
+  }).index("by_clerk_id", ["clerkId"]),
 });
